@@ -221,5 +221,6 @@ def get_kafka_broker_address() -> str:
 ```
 After you update this file save it. Then rerun the code and see if it helps. If it does not help you can always return the code to its original format. 
 Note: The capital L is unusual. On some systems, it may work, or it may end up using the default provided in the code. 
+Some changed it to localhost:2181 and localhost:9092 respectively, and that worked well, too. 
 Let us know what works for you. 
 
