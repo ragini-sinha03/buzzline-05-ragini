@@ -12,6 +12,7 @@ Producers send messages to a Kafka topic.
 import sys
 import socket
 import time
+import os
 
 # Import external packages
 from kafka import KafkaProducer, KafkaConsumer, errors
@@ -79,16 +80,20 @@ def check_kafka_service_is_ready():
 def verify_services():
     # Verify Zookeeper is ready
     if not check_zookeeper_service_is_ready():
-        logger.error(
-            "Zookeeper is not ready. Please check your Zookeeper setup. Exiting..."
-        )
+        logger.error("ERROR: Zookeeper connection in Python failed.")
+        logger.warning(f"Python thinks ZOOKEEPER_ADDRESS= { os.getenv('ZOOKEEPER_ADDRESS') } ")
+        logger.warning("1. It looks like Zookeeper is running fine and we just need to connect.")
+        logger.warning("2. Check your .env file and provide correct settings for Python.")
+        logger.warning("3. If Windows+WSL, in .env, uncomment the 'localhost' option and comment out the '127.0.0.1' line.")
         sys.exit(1)
 
     # Verify Kafka is ready
     if not check_kafka_service_is_ready():
-        logger.error(
-            "Kafka broker is not ready. Please check your Kafka setup. Exiting..."
-        )
+        logger.error("ERROR: Kafka connection in Python failed.")
+        logger.warning(f"Python thinks KAFKA_BROKER_ADDRESS= { os.getenv('KAFKA_BROKER_ADDRESS') } ")
+        logger.warning("1. It looks like Kafka is running fine and we just need to connect.")
+        logger.warning("2. Check your .env file and provide correct settings for Python.")
+        logger.warning("3. If Windows+WSL, in .env, uncomment the 'localhost' option and comment out the '127.0.0.1' line.")
         sys.exit(2)
 
 
