@@ -184,3 +184,42 @@ Managing Python virtual environments is a valuable skill.
 This project is licensed under the MIT License as an example project. 
 You are encouraged to fork, copy, explore, and modify the code as you like. 
 See the [LICENSE](LICENSE.txt) file for more.
+
+## Troubleshooting
+
+Some people have updated the utils.utils_config.py file. 
+
+Old file code: 
+```
+def get_zookeeper_address() -> str:
+    """Fetch ZOOKEEPER_ADDRESS from environment or use default."""
+    address = os.getenv("ZOOKEEPER_ADDRESS", "127.0.0.1:2181")
+    logger.info(f"ZOOKEEPER_ADDRESS: {address}")
+    return address
+
+
+def get_kafka_broker_address() -> str:
+    """Fetch KAFKA_BROKER_ADDRESS from environment or use default."""
+    address = os.getenv("KAFKA_BROKER_ADDRESS", "127.0.0.1:9092")
+    logger.info(f"KAFKA_BROKER_ADDRESS: {address}")
+    return address
+```
+New file:
+```
+def get_zookeeper_address() -> str:
+    """Fetch ZOOKEEPER_ADDRESS from environment or use default."""
+    address = os.getenv("ZOOKEEPER_ADDRESS", "Localhost:2181")
+    logger.info(f"ZOOKEEPER_ADDRESS: {address}")
+    return address
+
+
+def get_kafka_broker_address() -> str:
+    """Fetch KAFKA_BROKER_ADDRESS from environment or use default."""
+    address = os.getenv("KAFKA_BROKER_ADDRESS", "Localhost:9092")
+    logger.info(f"KAFKA_BROKER_ADDRESS: {address}")
+    return address
+```
+After you update this file save it. Then rerun the code and see if it helps. If it does not help you can always return the code to its original format. 
+Note: The capital L is unusual. On some systems, it may work, or it may end up using the default provided in the code. 
+Let us know what works for you. 
+
