@@ -12,11 +12,18 @@
 # If it gets messed up, we can delete .venv and recreate it at any time. 
 
 # Run the following command to create a virtual environment in the project root.
+
 ### On Windows, Use PowerShell (not cmd) - don't include the #:
 # py -3.11 -m venv .venv
 
-### On Mac/Linux, Use zsh or bash (or PowerShell) - don't include the #:
-# python3 -3.11 -m venv .venv
+### On Mac  - don't include the #:
+# brew install python@3.11
+# python3 -m venv .venv
+
+### On Linux/WSL - don't include the #:
+# sudo apt update
+# sudo apt install python3.11 python3.11-venv
+# python3.11 -m venv .venv
 
 ### If VS Code asks: We noticed a new environment has been created. 
 # Do you want to select it for the workspace folder?
@@ -51,7 +58,7 @@
 
 ### Windows Command (don't include the #):
 # py -m pip install --upgrade pip setuptools wheel
-# py -m pip install --upgrade -r requirements.txt
+# py -m pip install -r requirements.txt
 
 ### Mac/Linux Command (don't include the #):
 # python3 -m pip install --upgrade pip setuptools wheel
@@ -88,28 +95,67 @@ loguru
 # Environment variables management
 python-dotenv
 
+# pytest for lightweight testing
+pytest
+
 # ======================================================
-# KAFKA MESSAGE BROKER INTEGRATION
+# DATA ANALYSIS 
 # ======================================================
 
-kafka-python-ng==2.2.3
-six==1.17.0
+# Numerical computations and arrays (20-30 MB)
+numpy
+
+# Data manipulation and analysis (built on numpy, 10-20 MB)
+pandas
+
+# ======================================================
+# KAFKA STREAMING MESSAGE BROKER INTEGRATION
+# ======================================================
+
+# Kafka Python client (lightweight, ~1 MB)
+# Supports Kafka 3.5+ with KRaft mode (no ZooKeeper required)
+kafka-python-ng
 
 # ======================================================
 # DATABASE INTEGRATION 
 # ======================================================
 
-# sqlite3 is part of Python Std Lib - no need to install it 
-# Other popular tools include the following.
+# sqlite3
+# - Most popular and accessible: included in Python Std Lib.
+# - Great for beginners, small projects, and teaching.
+# - No install required.
 
-# SQLAlchemy - SQL toolkit and Object-Relational Mapping (ORM) library
+# DuckDB
+# - Growing rapidly in popularity for analytics.
+# - In-process OLAP engine (no server needed).
+# - Super easy to install (just one package).
+duckdb
+
+# pyarrow
+# - For Apache Arrow/Parquet support.
+# - Optional: enhances DuckDB and Pandas interoperability.
+# Uncomment the line below to install pyarrow.
+# pyarrow
+
+# duckdb-engine
+# - Optional SQLAlchemy dialect for DuckDB.
+# - Needed only if you want DuckDB via SQLAlchemy ORM.
+# Uncomment the line below to install duckdb-engine.
+# duckdb-engine
+
+# SQLAlchemy
+# - Very popular toolkit/ORM to unify DB access across SQLite, Postgres, MySQL, etc.
 # Uncomment the line below to install SQLAlchemy.
 # SQLAlchemy
 
-# psycopg2 - PostgreSQL database adapter for Python
+# psycopg2
+# - Standard PostgreSQL adapter.
+# - Needed if DATABASE_TYPE=postgres.
 # Uncomment the line below to install psycopg2.
 # psycopg2
 
-# PyMySQL - MySQL client library
+# PyMySQL
+# - MySQL client library.
+# - Needed if DATABASE_TYPE=mysql.
 # Uncomment the line below to install PyMySQL.
 # PyMySQL

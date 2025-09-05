@@ -2,11 +2,11 @@
 Config Utility
 File: utils/utils_config.py
 
-This script provides the configuration functions for the project. 
+This script provides the configuration functions for the project.
 
-It centralizes the configuration management 
+It centralizes the configuration management
 by loading environment variables from .env in the root project folder
- and constructing file paths using pathlib. 
+ and constructing file paths using pathlib.
 
 If you rename any variables in .env, remember to:
 - recopy .env to .env.example (and hide the secrets)
@@ -36,13 +36,6 @@ load_dotenv()
 #####################################
 # Getter Functions for .env Variables
 #####################################
-
-
-def get_zookeeper_address() -> str:
-    """Fetch ZOOKEEPER_ADDRESS from environment or use default."""
-    address = os.getenv("ZOOKEEPER_ADDRESS", "127.0.0.1:2181")
-    logger.info(f"ZOOKEEPER_ADDRESS: {address}")
-    return address
 
 
 def get_kafka_broker_address() -> str:
@@ -168,7 +161,6 @@ if __name__ == "__main__":
     # Test the configuration functions
     logger.info("Testing configuration.")
     try:
-        get_zookeeper_address()
         get_kafka_broker_address()
         get_kafka_topic()
         get_message_interval_seconds_as_int()

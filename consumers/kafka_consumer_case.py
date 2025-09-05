@@ -40,7 +40,7 @@ from utils.utils_producer import verify_services, is_topic_available
 
 # Ensure the parent directory is in sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from consumers.db_sqlite_case import init_db, insert_message
+from consumers.sqlite_consumer_case import init_db, insert_message
 
 #####################################
 # Function to process a single message
