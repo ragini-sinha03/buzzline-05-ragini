@@ -1,0 +1,9 @@
+2025-09-18 09:52:23 | INFO | message={'message': 'I just found game! It was weird.', 'author': 'Eve', 'timestamp': '2025-09-18 09:52:13', 'category': 'gaming', 'sentiment': 0.34, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-09-18 09:52:23 | INFO | db_path=PosixPath('/mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite')
+2025-09-18 09:52:23 | INFO | Inserted one message into the database.
+2025-09-18 09:52:23 | INFO | Processed message: {'message': 'I just shared Python! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-18 09:52:18', 'category': 'tech', 'sentiment': 0.25, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-09-18 09:52:23 | INFO | Calling SQLite insert_message() with:
+2025-09-18 09:52:23 | INFO | message={'message': 'I just shared Python! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-18 09:52:18', 'category': 'tech', 'sentiment': 0.25, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-09-18 09:52:23 | INFO | db_path=PosixPath('/mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite')
+2025-09-18 09:52:23 | INFO | Inserted one message into the database.
+2025-09-18 09:52:23 | INFO | TRY/FINALLY: Consumer shutting down.
