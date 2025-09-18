@@ -66,7 +66,6 @@ Before starting, run a short prep script to ensure Kafka has a persistent data d
 ```bash
 chmod +x scripts/prepare_kafka.sh
 scripts/prepare_kafka.sh
-cd ~/kafka
 bin/kafka-server-start.sh config/kraft/server.properties
 ```
 
@@ -92,7 +91,6 @@ Open a new PowerShell terminal in VS Code (Terminal / New Terminal / PowerShell)
 
 ```powershell
 py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
 py -m pip install --upgrade pip wheel setuptools
 py -m pip install --upgrade -r requirements.txt
 ```
