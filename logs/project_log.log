@@ -1,0 +1,94 @@
+2025-09-17 12:37:46 | INFO | Logging to file: logs/project_log.log
+2025-09-17 12:37:46 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 12:37:47 | INFO | Logging to file: logs/project_log.log
+2025-09-17 12:37:47 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 12:37:47 | INFO | Starting Consumer to run continuously.
+2025-09-17 12:37:47 | INFO | Things can fail or get interrupted, so use a try block.
+2025-09-17 12:37:47 | INFO | Moved .env variables into a utils config module.
+2025-09-17 12:37:47 | INFO | STEP 1. Read environment variables using new config functions.
+2025-09-17 12:37:47 | INFO | MESSAGE_INTERVAL_SECONDS: 5
+2025-09-17 12:37:47 | INFO | BASE_DATA_DIR: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data
+2025-09-17 12:37:47 | INFO | LIVE_DATA_PATH: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/project_live.json
+2025-09-17 12:37:47 | INFO | BASE_DATA_DIR: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data
+2025-09-17 12:37:47 | INFO | SQLITE_PATH: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite
+2025-09-17 12:37:47 | INFO | SUCCESS: Read environment variables.
+2025-09-17 12:37:47 | INFO | STEP 2. Delete any prior database file for a fresh start.
+2025-09-17 12:37:47 | INFO | STEP 3. Initialize a new database with an empty table.
+2025-09-17 12:37:47 | INFO | Calling SQLite init_db() with {db_path=}.
+2025-09-17 12:37:47 | INFO | SUCCESS: Got a cursor to execute SQL.
+2025-09-17 12:37:47 | INFO | SUCCESS: Database initialized and table ready at /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite.
+2025-09-17 12:37:47 | INFO | STEP 4. Begin consuming and storing messages.
+2025-09-17 12:37:47 | INFO | Called consume_messages_from_file() with:
+2025-09-17 12:37:47 | INFO |    live_data_path=PosixPath('/mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/project_live.json')
+2025-09-17 12:37:47 | INFO |    sql_path=PosixPath('/mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite')
+2025-09-17 12:37:47 | INFO |    interval_secs=5
+2025-09-17 12:37:47 | INFO |    last_position=0
+2025-09-17 12:37:47 | INFO | 1. Initialize the database.
+2025-09-17 12:37:47 | INFO | Calling SQLite init_db() with {db_path=}.
+2025-09-17 12:37:47 | INFO | SUCCESS: Got a cursor to execute SQL.
+2025-09-17 12:37:47 | INFO | SUCCESS: Database initialized and table ready at /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite.
+2025-09-17 12:37:47 | INFO | 2. Set the last position to 0 to start at the beginning of the file.
+2025-09-17 12:37:47 | INFO | 3. Read from live data file at position 0.
+2025-09-17 12:37:47 | ERROR | ERROR: Live data file not found at /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/project_live.json.
+2025-09-17 12:37:47 | INFO | TRY/FINALLY: Consumer shutting down.
+2025-09-17 12:37:47 | INFO | Logging to file: logs/project_log.log
+2025-09-17 12:37:47 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 12:37:47 | INFO | Starting db testing.
+2025-09-17 12:37:48 | INFO | Logging to file: logs/project_log.log
+2025-09-17 12:37:48 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 12:37:48 | INFO | Starting DuckDB db testing.
+2025-09-17 12:37:48 | INFO | Using DuckDB file at: data/buzz.duckdb
+2025-09-17 12:37:48 | INFO | Calling DuckDB init_db() with {db_path=}.
+2025-09-17 12:37:48 | INFO | SUCCESS: Connected to DuckDB.
+2025-09-17 12:37:48 | ERROR | ERROR: Failed to initialize DuckDB at data/buzz.duckdb: Parser Error: syntax error at or near "GENERATED"
+
+LINE 3:                 id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, -- auto-increment
+                                              ^
+2025-09-17 12:37:48 | INFO | Calling DuckDB insert_message() with:
+2025-09-17 12:37:48 | INFO | message={'message': 'I just shared a meme! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-01-29 14:35:20', 'category': 'humor', 'sentiment': 0.87, 'keyword_mentioned': 'meme', 'message_length': 42}
+2025-09-17 12:37:48 | INFO | db_path=PosixPath('data/buzz.duckdb')
+2025-09-17 12:37:58 | ERROR | ERROR: Failed to insert message into DuckDB: Catalog Error: Table with name streamed_messages does not exist!
+Did you mean "sqlite_temp_master"?
+2025-09-17 12:37:58 | ERROR | ERROR: Verification SELECT failed: Catalog Error: Table with name streamed_messages does not exist!
+Did you mean "sqlite_temp_master"?
+
+LINE 3:             FROM streamed_messages
+                         ^
+2025-09-17 12:37:58 | INFO | Finished DuckDB db testing.
+2025-09-17 19:51:31 | INFO | Logging to file: logs/project_log.log
+2025-09-17 19:51:31 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 19:51:31 | INFO | Starting Consumer to run continuously.
+2025-09-17 19:51:31 | INFO | Things can fail or get interrupted, so use a try block.
+2025-09-17 19:51:31 | INFO | Moved .env variables into a utils config module.
+2025-09-17 19:51:31 | INFO | STEP 1. Read environment variables using new config functions.
+2025-09-17 19:51:31 | INFO | MESSAGE_INTERVAL_SECONDS: 5
+2025-09-17 19:51:31 | INFO | BASE_DATA_DIR: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data
+2025-09-17 19:51:31 | INFO | LIVE_DATA_PATH: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/project_live.json
+2025-09-17 19:51:31 | INFO | BASE_DATA_DIR: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data
+2025-09-17 19:51:31 | INFO | SQLITE_PATH: /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite
+2025-09-17 19:51:31 | INFO | SUCCESS: Read environment variables.
+2025-09-17 19:51:31 | INFO | STEP 2. Delete any prior database file for a fresh start.
+2025-09-17 19:51:31 | INFO | SUCCESS: Deleted database file.
+2025-09-17 19:51:31 | INFO | STEP 3. Initialize a new database with an empty table.
+2025-09-17 19:51:31 | INFO | Calling SQLite init_db() with {db_path=}.
+2025-09-17 19:51:31 | INFO | SUCCESS: Got a cursor to execute SQL.
+2025-09-17 19:51:31 | INFO | SUCCESS: Database initialized and table ready at /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite.
+2025-09-17 19:51:31 | INFO | STEP 4. Begin consuming and storing messages.
+2025-09-17 19:51:31 | INFO | Called consume_messages_from_file() with:
+2025-09-17 19:51:31 | INFO |    live_data_path=PosixPath('/mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/project_live.json')
+2025-09-17 19:51:31 | INFO |    sql_path=PosixPath('/mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite')
+2025-09-17 19:51:31 | INFO |    interval_secs=5
+2025-09-17 19:51:31 | INFO |    last_position=0
+2025-09-17 19:51:31 | INFO | 1. Initialize the database.
+2025-09-17 19:51:31 | INFO | Calling SQLite init_db() with {db_path=}.
+2025-09-17 19:51:31 | INFO | SUCCESS: Got a cursor to execute SQL.
+2025-09-17 19:51:31 | INFO | SUCCESS: Database initialized and table ready at /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/buzz.sqlite.
+2025-09-17 19:51:31 | INFO | 2. Set the last position to 0 to start at the beginning of the file.
+2025-09-17 19:51:31 | INFO | 3. Read from live data file at position 0.
+2025-09-17 19:51:31 | ERROR | ERROR: Live data file not found at /mnt/c/RaginiWorkArea/StreamingData/buzzline-05-USERi/data/project_live.json.
+2025-09-17 19:51:31 | INFO | TRY/FINALLY: Consumer shutting down.
+2025-09-17 19:52:14 | INFO | Logging to file: logs/project_log.log
+2025-09-17 19:52:14 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 19:58:55 | INFO | Logging to file: logs/project_log.log
+2025-09-17 19:58:55 | INFO | Log sanitization enabled, personal info removed
+2025-09-17 19:58:55 | INFO | Starting db testing.
