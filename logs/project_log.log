@@ -1,6 +1,1 @@
-2025-09-18 09:52:23 | INFO | {'message': 'I just tried a story! It was exciting.', 'author': 'Eve', 'timestamp': '2025-09-18 09:52:23', 'category': 'other', 'sentiment': 0.92, 'keyword_mentioned': 'other', 'message_length': 38}
-2025-09-18 09:52:28 | INFO | {'message': 'I just tried a story! It was weird.', 'author': 'Alice', 'timestamp': '2025-09-18 09:52:28', 'category': 'other', 'sentiment': 0.5, 'keyword_mentioned': 'other', 'message_length': 35}
-2025-09-18 09:52:33 | INFO | {'message': 'I just shared a movie! It was boring.', 'author': 'Alice', 'timestamp': '2025-09-18 09:52:33', 'category': 'entertainment', 'sentiment': 0.77, 'keyword_mentioned': 'movie', 'message_length': 37}
-2025-09-18 09:52:38 | INFO | Logging to file: logs/project_log.log
-2025-09-18 09:52:38 | INFO | Log sanitization enabled, personal info removed
-2025-09-18 09:52:38 | INFO | {'message': 'I just loved a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-09-18 09:52:38', 'category': 'other', 'sentiment': 0.46, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-09-18 10:25:10 | INFO | {'message': 'I just found a trick! It was exciting.', 'author': 'Bob', 'timestamp': '2025-09-18 10:25:10', 'category': 'other', 'sentiment': 0.39, 'keyword_mentioned': 'other', 'message_length': 38}
