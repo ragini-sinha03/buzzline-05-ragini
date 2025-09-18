@@ -342,3 +342,19 @@ See the [LICENSE](LICENSE.txt) file for more.
 - Ruff by Astral Software (Linter + Formatter)
 - **SQLite Viewer by Florian Klampfer**
 - WSL by Microsoft (on Windows Machines)
+
+---
+
+## Custom Consumer: "consumer_ragini.py"
+
+'consumer_ragini.py' is a custom consumer that reads one message at a time from the live data file ('project_live.json'). For each message, it extracts the 'category' and 'sentiment' fields and stores them in a persistent SQLite database ('ragini_processed.sqlite').
+
+### What insight is calculated and stored?
+
+For every incoming message, the consumer calculates and stores:
+- **Category**: The topic or type of the message (e.g., tech, humor, food)
+- **Sentiment**: The sentiment score associated with the message
+
+### Why is this interesting?
+
+Storing category and sentiment for each message allows you to analyze how different topics are perceived over time. You can track sentiment trends by category, identify shifts in public opinion, and quickly spot issues or opportunities in your data stream. This insight is valuable for monitoring, reporting, and making data-driven decisions.
